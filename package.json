@@ -7,7 +7,11 @@
     "@salesforce/core": "^5.2.10",
     "@salesforce/kit": "^3.0.14",
     "@salesforce/sf-plugins-core": "^3.1.14",
-    "tslib": "^2"
+    "@types/node": "^20.8.10",
+    "@types/xml2js": "^0.4.13",
+    "fast-glob": "^3.3.1",
+    "tslib": "^2",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@salesforce/cli-plugins-testkit": "^4.4.7",
