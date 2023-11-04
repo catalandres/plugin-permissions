@@ -2,7 +2,7 @@ import * as path from 'path';
 import { execCmd, TestSession } from '@salesforce/cli-plugins-testkit';
 import { expect } from 'chai';
 
-describe('when `permissions list sets` runs on an empty project', () => {
+describe('when `permissions list policies` runs on an empty project', () => {
 	let session: TestSession;
 
 	before(async () => {
@@ -19,7 +19,7 @@ describe('when `permissions list sets` runs on an empty project', () => {
 	});
 
 	it('should display table properly', () => {
-		const command = 'permissions list sets';
+		const command = 'permissions list policies';
 
 		const columnHeader1 = 'Developer Name';
 		const columnHeader2 = 'Label';
@@ -31,13 +31,13 @@ describe('when `permissions list sets` runs on an empty project', () => {
 	});
 
 	it('should return empty results', () => {
-		const command = 'permissions list sets --json';
+		const command = 'permissions list policies --json';
 		const output = execCmd(command, { ensureExitCode: 0 }).jsonOutput;
 		expect(output?.result).to.be.eql([]);
 	});
 });
 
-describe('when `permissions list sets` runs on a nonempty project with a single package', () => {
+describe('when `permissions list policies` runs on a nonempty project with a single package', () => {
 	let session: TestSession;
 
 	before(async () => {
@@ -54,13 +54,13 @@ describe('when `permissions list sets` runs on a nonempty project with a single 
 	});
 
 	it('should display table properly', () => {
-		const command = 'permissions list sets';
+		const command = 'permissions list policies';
 
 		const columnHeader1 = 'Developer Name';
 		const columnHeader2 = 'Label';
 
 		const name = 'Empty';
-		const filename = 'Empty Permission Set';
+		const filename = 'Empty User Access Policy';
 
 		const output = execCmd(command, { ensureExitCode: 0 }).shellOutput.stdout;
 		expect(output).to.contain(columnHeader1);
@@ -71,13 +71,13 @@ describe('when `permissions list sets` runs on a nonempty project with a single 
 	});
 
 	it('should not return empty results', () => {
-		const command = 'permissions list sets --json';
+		const command = 'permissions list policies --json';
 		const output = execCmd(command, { ensureExitCode: 0 }).jsonOutput;
 		expect(output?.result).not.to.be.eql([]);
 	});
 });
 
-describe('when `permissions list sets` runs on a nonempty project with multiple packages', () => {
+describe('when `permissions list policies` runs on a nonempty project with multiple packages', () => {
 	let session: TestSession;
 
 	before(async () => {
@@ -94,19 +94,19 @@ describe('when `permissions list sets` runs on a nonempty project with multiple 
 	});
 
 	it('should display table properly', () => {
-		const command = 'permissions list sets';
+		const command = 'permissions list policies';
 
 		const columnHeader1 = 'Developer Name';
 		const columnHeader2 = 'Label';
 
 		const name1 = 'MainEmpty';
-		const filename1 = 'Main Empty Permission Set';
+		const filename1 = 'Main Empty User Access Policy';
 
 		const name2 = 'AnotherEmpty';
-		const filename2 = 'Another Empty Permission Set';
+		const filename2 = 'Another Empty User Access Policy';
 
 		const name3 = 'IgnoredEmpty';
-		const filename3 = 'Ignored Empty Permission Set';
+		const filename3 = 'Ignored Empty User Access Policy';
 
 		const output = execCmd(command, { ensureExitCode: 0 }).shellOutput.stdout;
 		expect(output).to.contain(columnHeader1);
@@ -121,7 +121,7 @@ describe('when `permissions list sets` runs on a nonempty project with multiple 
 	});
 
 	it('should not return empty results', () => {
-		const command = 'permissions list sets --json';
+		const command = 'permissions list policies --json';
 		const output = execCmd(command, { ensureExitCode: 0 }).jsonOutput;
 		expect(output?.result).not.to.be.eql([]);
 	});
