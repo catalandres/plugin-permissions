@@ -1,18 +1,10 @@
 # summary
 
-Summary of a command.
+Lists all the user access policies in a project.
 
 # description
 
-More information about a command. Don't repeat the summary.
-
-# flags.name.summary
-
-Description of a flag.
-
-# flags.name.description
-
-More information about a flag. Don't repeat the summary.
+When run inside a SFDX project, it finds all the user access policies in each of the package directories specified in the `sfdx-project.json` file.
 
 # examples
 
