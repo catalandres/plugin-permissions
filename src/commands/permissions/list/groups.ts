@@ -7,6 +7,7 @@ import {
 	searchComponentsByType,
 } from '../../../core/componentSearch';
 
+
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('plugin-permissions', 'permissions.list.groups');
 
@@ -39,6 +40,7 @@ export default class PermissionsListGroups extends SfCommand<MetadataComponent[]
 		const { flags } = await this.parse(PermissionsListGroups);
 
 		const permissionSetGroupFiles: MetadataComponent[] = searchComponentsByType(
+
 			SfProject.getInstance().getPath(),
 			MetadataComponentType.PERMISSION_SET_GROUP
 		);

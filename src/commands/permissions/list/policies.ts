@@ -7,6 +7,7 @@ import {
 	searchComponentsByType,
 } from '../../../core/componentSearch';
 
+
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('plugin-permissions', 'permissions.list.policies');
 
@@ -39,6 +40,7 @@ export default class PermissionsListPolicies extends SfCommand<MetadataComponent
 		const { flags } = await this.parse(PermissionsListPolicies);
 
 		const userAccessPolicyFiles: MetadataComponent[] = searchComponentsByType(
+
 			SfProject.getInstance().getPath(),
 			MetadataComponentType.USER_ACCESS_POLICY
 		);
