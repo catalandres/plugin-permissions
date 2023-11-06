@@ -1,6 +1,11 @@
 import { SfCommand } from '@salesforce/sf-plugins-core'; // Flags
 import { SfProject, Messages } from '@salesforce/core';
-import { MetadataComponent, MetadataComponentType, makeData, searchComponent } from '../../../core/componentSearch';
+import {
+	MetadataComponent,
+	MetadataComponentType,
+	makeData,
+	searchComponentsByType,
+} from '../../../core/componentSearch';
 
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('plugin-permissions', 'permissions.list.sets');
@@ -32,7 +37,7 @@ export default class PermissionsListSets extends SfCommand<MetadataComponent[]> 
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { flags } = await this.parse(PermissionsListSets);
 
-		const permissionSetFiles: MetadataComponent[] = searchComponent(
+		const permissionSetFiles: MetadataComponent[] = searchComponentsByType(
 			SfProject.getInstance().getPath(),
 			MetadataComponentType.PERMISSION_SET
 		);
