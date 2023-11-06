@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 import * as xml2js from 'xml2js';
 import { glob } from 'fast-glob';
 import { SfProject, NamedPackageDir } from '@salesforce/core';
