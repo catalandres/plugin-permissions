@@ -9,13 +9,13 @@ This repository provides a template for creating a plugin for the Salesforce CLI
 1. Please get in touch with the Platform CLI team. We want to help you develop your plugin.
 2. Generate your plugin:
 
-   ```
-   sf plugins install dev
-   sf dev generate plugin
+    ```
+    sf plugins install dev
+    sf dev generate plugin
 
-   git init -b main
-   git add . && git commit -m "chore: initial commit"
-   ```
+    git init -b main
+    git add . && git commit -m "chore: initial commit"
+    ```
 
 3. Create your plugin's repo in the salesforcecli github org
 4. When you're ready, replace the contents of this README with the information you want.
@@ -30,13 +30,13 @@ Additionally, there are some additional tests that the Salesforce CLI will enfor
 
 ### Tooling
 
-- [@salesforce/core](https://github.com/forcedotcom/sfdx-core)
-- [@salesforce/kit](https://github.com/forcedotcom/kit)
-- [@salesforce/sf-plugins-core](https://github.com/salesforcecli/sf-plugins-core)
-- [@salesforce/ts-types](https://github.com/forcedotcom/ts-types)
-- [@salesforce/ts-sinon](https://github.com/forcedotcom/ts-sinon)
-- [@salesforce/dev-config](https://github.com/forcedotcom/dev-config)
-- [@salesforce/dev-scripts](https://github.com/forcedotcom/dev-scripts)
+-   [@salesforce/core](https://github.com/forcedotcom/sfdx-core)
+-   [@salesforce/kit](https://github.com/forcedotcom/kit)
+-   [@salesforce/sf-plugins-core](https://github.com/salesforcecli/sf-plugins-core)
+-   [@salesforce/ts-types](https://github.com/forcedotcom/ts-types)
+-   [@salesforce/ts-sinon](https://github.com/forcedotcom/ts-sinon)
+-   [@salesforce/dev-config](https://github.com/forcedotcom/dev-config)
+-   [@salesforce/dev-scripts](https://github.com/forcedotcom/dev-scripts)
 
 ### Hooks
 
@@ -111,35 +111,425 @@ sf plugins
 
 <!-- commands -->
 
-- [`sf hello world`](#sf-hello-world)
+-   [`sf p ls ps`](#sf-p-ls-ps)
+-   [`sf p ls psg`](#sf-p-ls-psg)
+-   [`sf p ls uap`](#sf-p-ls-uap)
+-   [`sf permissions list groups`](#sf-permissions-list-groups)
+-   [`sf permissions list permission-set-groups`](#sf-permissions-list-permission-set-groups)
+-   [`sf permissions list permission-sets`](#sf-permissions-list-permission-sets)
+-   [`sf permissions list policies`](#sf-permissions-list-policies)
+-   [`sf permissions list sets`](#sf-permissions-list-sets)
+-   [`sf permissions list user-access-policies`](#sf-permissions-list-user-access-policies)
+-   [`sf permissions ls groups`](#sf-permissions-ls-groups)
+-   [`sf permissions ls policies`](#sf-permissions-ls-policies)
+-   [`sf permissions ls ps`](#sf-permissions-ls-ps)
+-   [`sf permissions ls psg`](#sf-permissions-ls-psg)
+-   [`sf permissions ls sets`](#sf-permissions-ls-sets)
+-   [`sf permissions ls uap`](#sf-permissions-ls-uap)
 
-## `sf hello world`
+## `sf p ls ps`
 
-Say hello either to the world or someone you know.
+Lists all the permission sets in a project.
 
 ```
 USAGE
-  $ sf hello world [--json] [-n <value>]
-
-FLAGS
-  -n, --name=<value>  [default: World] The name of the person you'd like to say hello to.
+  $ sf p ls ps [--json]
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Say hello either to the world or someone you know.
+  Lists all the permission sets in a project.
 
-  Say hello either to the world or someone you know.
+  When run inside a SFDX project, it finds all the permission sets in each of the package directories specified in the
+  `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-sets
+  $ sf permissions ls sets
+  $ sf permissions ls ps
+  $ sf p ls ps
 
 EXAMPLES
-  Say hello to the world:
+  $ sf p ls ps
+```
 
-    $ sf hello world
+## `sf p ls psg`
 
-  Say hello to someone you know:
+Lists all the permission set groups in a project.
 
-    $ sf hello world --name Astro
+```
+USAGE
+  $ sf p ls psg [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission set groups in a project.
+
+  When run inside a SFDX project, it finds all the permission set groups in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-set-groups
+  $ sf permissions ls groups
+  $ sf permissions ls psg
+  $ sf p ls psg
+
+EXAMPLES
+  $ sf p ls psg
+```
+
+## `sf p ls uap`
+
+Lists all the user access policies in a project.
+
+```
+USAGE
+  $ sf p ls uap [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the user access policies in a project.
+
+  When run inside a SFDX project, it finds all the user access policies in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list user-access-policies
+  $ sf permissions ls policies
+  $ sf permissions ls uap
+  $ sf p ls uap
+
+EXAMPLES
+  $ sf p ls uap
+```
+
+## `sf permissions list groups`
+
+Lists all the permission set groups in a project.
+
+```
+USAGE
+  $ sf permissions list groups [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission set groups in a project.
+
+  When run inside a SFDX project, it finds all the permission set groups in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-set-groups
+  $ sf permissions ls groups
+  $ sf permissions ls psg
+  $ sf p ls psg
+
+EXAMPLES
+  $ sf permissions list groups
+```
+
+## `sf permissions list permission-set-groups`
+
+Lists all the permission set groups in a project.
+
+```
+USAGE
+  $ sf permissions list permission-set-groups [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission set groups in a project.
+
+  When run inside a SFDX project, it finds all the permission set groups in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-set-groups
+  $ sf permissions ls groups
+  $ sf permissions ls psg
+  $ sf p ls psg
+
+EXAMPLES
+  $ sf permissions list permission-set-groups
+```
+
+## `sf permissions list permission-sets`
+
+Lists all the permission sets in a project.
+
+```
+USAGE
+  $ sf permissions list permission-sets [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission sets in a project.
+
+  When run inside a SFDX project, it finds all the permission sets in each of the package directories specified in the
+  `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-sets
+  $ sf permissions ls sets
+  $ sf permissions ls ps
+  $ sf p ls ps
+
+EXAMPLES
+  $ sf permissions list permission-sets
+```
+
+## `sf permissions list policies`
+
+Lists all the user access policies in a project.
+
+```
+USAGE
+  $ sf permissions list policies [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the user access policies in a project.
+
+  When run inside a SFDX project, it finds all the user access policies in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list user-access-policies
+  $ sf permissions ls policies
+  $ sf permissions ls uap
+  $ sf p ls uap
+
+EXAMPLES
+  $ sf permissions list policies
+```
+
+## `sf permissions list sets`
+
+Lists all the permission sets in a project.
+
+```
+USAGE
+  $ sf permissions list sets [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission sets in a project.
+
+  When run inside a SFDX project, it finds all the permission sets in each of the package directories specified in the
+  `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-sets
+  $ sf permissions ls sets
+  $ sf permissions ls ps
+  $ sf p ls ps
+
+EXAMPLES
+  $ sf permissions list sets
+```
+
+## `sf permissions list user-access-policies`
+
+Lists all the user access policies in a project.
+
+```
+USAGE
+  $ sf permissions list user-access-policies [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the user access policies in a project.
+
+  When run inside a SFDX project, it finds all the user access policies in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list user-access-policies
+  $ sf permissions ls policies
+  $ sf permissions ls uap
+  $ sf p ls uap
+
+EXAMPLES
+  $ sf permissions list user-access-policies
+```
+
+## `sf permissions ls groups`
+
+Lists all the permission set groups in a project.
+
+```
+USAGE
+  $ sf permissions ls groups [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission set groups in a project.
+
+  When run inside a SFDX project, it finds all the permission set groups in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-set-groups
+  $ sf permissions ls groups
+  $ sf permissions ls psg
+  $ sf p ls psg
+
+EXAMPLES
+  $ sf permissions ls groups
+```
+
+## `sf permissions ls policies`
+
+Lists all the user access policies in a project.
+
+```
+USAGE
+  $ sf permissions ls policies [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the user access policies in a project.
+
+  When run inside a SFDX project, it finds all the user access policies in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list user-access-policies
+  $ sf permissions ls policies
+  $ sf permissions ls uap
+  $ sf p ls uap
+
+EXAMPLES
+  $ sf permissions ls policies
+```
+
+## `sf permissions ls ps`
+
+Lists all the permission sets in a project.
+
+```
+USAGE
+  $ sf permissions ls ps [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission sets in a project.
+
+  When run inside a SFDX project, it finds all the permission sets in each of the package directories specified in the
+  `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-sets
+  $ sf permissions ls sets
+  $ sf permissions ls ps
+  $ sf p ls ps
+
+EXAMPLES
+  $ sf permissions ls ps
+```
+
+## `sf permissions ls psg`
+
+Lists all the permission set groups in a project.
+
+```
+USAGE
+  $ sf permissions ls psg [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission set groups in a project.
+
+  When run inside a SFDX project, it finds all the permission set groups in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-set-groups
+  $ sf permissions ls groups
+  $ sf permissions ls psg
+  $ sf p ls psg
+
+EXAMPLES
+  $ sf permissions ls psg
+```
+
+## `sf permissions ls sets`
+
+Lists all the permission sets in a project.
+
+```
+USAGE
+  $ sf permissions ls sets [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the permission sets in a project.
+
+  When run inside a SFDX project, it finds all the permission sets in each of the package directories specified in the
+  `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list permission-sets
+  $ sf permissions ls sets
+  $ sf permissions ls ps
+  $ sf p ls ps
+
+EXAMPLES
+  $ sf permissions ls sets
+```
+
+## `sf permissions ls uap`
+
+Lists all the user access policies in a project.
+
+```
+USAGE
+  $ sf permissions ls uap [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Lists all the user access policies in a project.
+
+  When run inside a SFDX project, it finds all the user access policies in each of the package directories specified in
+  the `sfdx-project.json` file.
+
+ALIASES
+  $ sf permissions list user-access-policies
+  $ sf permissions ls policies
+  $ sf permissions ls uap
+  $ sf p ls uap
+
+EXAMPLES
+  $ sf permissions ls uap
 ```
 
 <!-- commandsstop -->

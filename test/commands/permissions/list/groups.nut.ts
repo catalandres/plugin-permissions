@@ -1,4 +1,4 @@
-import * as path from 'path';
+import * as path from 'node:path';
 import { execCmd, TestSession } from '@salesforce/cli-plugins-testkit';
 import { expect } from 'chai';
 

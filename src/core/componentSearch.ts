@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 import * as xml2js from 'xml2js';
 import { glob } from 'fast-glob';
 import { SfProject, NamedPackageDir } from '@salesforce/core';
@@ -37,7 +37,7 @@ export function makeData(component: MetadataComponent): Record<string, unknown> 
 	return JSON.parse(JSON.stringify(component)) as Record<string, unknown>;
 }
 
-export function searchComponent(projectPath: string, componentName: MetadataComponentType): MetadataComponent[] {
+export function searchComponentsByType(projectPath: string, componentName: MetadataComponentType): MetadataComponent[] {
 	const components: MetadataComponent[] = [];
 
 	SfProject.getInstance(projectPath)
@@ -67,7 +67,6 @@ export function searchComponent(projectPath: string, componentName: MetadataComp
 
 				switch (componentName) {
 					case MetadataComponentType.PERMISSION_SET: {
-						let permissionSet: PermissionSet;
 						xml2js.parseString(
 							xml,
 							{
@@ -76,15 +75,13 @@ export function searchComponent(projectPath: string, componentName: MetadataComp
 								valueProcessors: [xml2js.processors.parseNumbers, xml2js.processors.parseBooleans],
 							},
 							(err, result: PermissionSetParsingResult) => {
-								permissionSet = result.PermissionSet;
-								component.label = permissionSet.label;
-								component.description = permissionSet.description as string;
+								component.label = result.PermissionSet.label;
+								component.description = result.PermissionSet.description as string;
 							}
 						);
 						break;
 					}
 					case MetadataComponentType.PERMISSION_SET_GROUP: {
-						let permissionSetGroup: PermissionSetGroup;
 						xml2js.parseString(
 							xml,
 							{
@@ -93,15 +90,13 @@ export function searchComponent(projectPath: string, componentName: MetadataComp
 								valueProcessors: [xml2js.processors.parseNumbers, xml2js.processors.parseBooleans],
 							},
 							(err, result: PermissionSetGroupParsingResult) => {
-								permissionSetGroup = result.PermissionSetGroup;
-								component.label = permissionSetGroup.label;
-								component.description = permissionSetGroup.description as string;
+								component.label = result.PermissionSetGroup.label;
+								component.description = result.PermissionSetGroup.description as string;
 							}
 						);
 						break;
 					}
 					case MetadataComponentType.USER_ACCESS_POLICY: {
-						let userAccessPolicy: UserAccessPolicy;
 						xml2js.parseString(
 							xml,
 							{
@@ -110,9 +105,8 @@ export function searchComponent(projectPath: string, componentName: MetadataComp
 								valueProcessors: [xml2js.processors.parseNumbers, xml2js.processors.parseBooleans],
 							},
 							(err, result: UserAccessPolicyParsingResult) => {
-								userAccessPolicy = result.UserAccessPolicy;
-								component.label = userAccessPolicy.masterLabel;
-								component.description = userAccessPolicy.description as string;
+								component.label = result.UserAccessPolicy.masterLabel;
+								component.description = result.UserAccessPolicy.description as string;
 							}
 						);
 						break;
