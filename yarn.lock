@@ -707,6 +707,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@es-joy/jsdoccomment@npm:~0.41.0":
+  version: 0.41.0
+  resolution: "@es-joy/jsdoccomment@npm:0.41.0"
+  dependencies:
+    comment-parser: "npm:1.4.1"
+    esquery: "npm:^1.5.0"
+    jsdoc-type-pratt-parser: "npm:~4.0.0"
+  checksum: 1fa27531eba32e4699664da53a0865aeeda1f7e83ac156fe53b7a6b09d2f3816baa94a34845ff019c10289b09572bda5519ec917e3e241088975477fa880f72d
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -1881,13 +1892,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/inquirer@npm:^9.0.3":
-  version: 9.0.6
-  resolution: "@types/inquirer@npm:9.0.6"
+"@types/inquirer@npm:^9.0.7":
+  version: 9.0.7
+  resolution: "@types/inquirer@npm:9.0.7"
   dependencies:
     "@types/through": "npm:*"
     rxjs: "npm:^7.2.0"
-  checksum: b19237abf78e01cc326cadc24feb161a51d582ea5977d8d2bb20ccfa9fc4ac00fd724202fcbb9b74c7d1425a4a33ec8cb616257edad4f660433f310d9bcbc7d4
+  checksum: b7138af41226c0457b99ff9b179da4a82078bc1674762e812d3cc3e3276936d7326b9fa6b98212b8eb055b2b6aaebe3c20359eebe176a6ca71061f4e08ce3a0f
   languageName: node
   linkType: hard
 
@@ -2065,12 +2076,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/xml2js@npm:^0.4.13":
-  version: 0.4.13
-  resolution: "@types/xml2js@npm:0.4.13"
+"@types/xml2js@npm:^0.4.14":
+  version: 0.4.14
+  resolution: "@types/xml2js@npm:0.4.14"
   dependencies:
     "@types/node": "npm:*"
-  checksum: a31ab20996185017b1f54e6024d998caebf039c439e95cd1c24340a0b333efafa79624c45aab4d5ab59b45332c0510b0b0ca4ebaf61f633941fe783d0683b97e
+  checksum: 06776e7f7aec55a698795e60425417caa7d7db3ff680a7b4ccaae1567c5fec28ff49b9975e9a0d74ff4acb8f4a43730501bbe64f9f761d784c6476ba4db12e13
   languageName: node
   linkType: hard
 
@@ -3424,6 +3435,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"comment-parser@npm:1.4.1":
+  version: 1.4.1
+  resolution: "comment-parser@npm:1.4.1"
+  checksum: d6c4be3f5be058f98b24f2d557f745d8fe1cc9eb75bebbdccabd404a0e1ed41563171b16285f593011f8b6a5ec81f564fb1f2121418ac5cbf0f49255bf0840dd
+  languageName: node
+  linkType: hard
+
 "common-ancestor-path@npm:^1.0.1":
   version: 1.0.1
   resolution: "common-ancestor-path@npm:1.0.1"
@@ -4298,6 +4316,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-jsdoc@npm:^46.9.0":
+  version: 46.9.0
+  resolution: "eslint-plugin-jsdoc@npm:46.9.0"
+  dependencies:
+    "@es-joy/jsdoccomment": "npm:~0.41.0"
+    are-docs-informative: "npm:^0.0.2"
+    comment-parser: "npm:1.4.1"
+    debug: "npm:^4.3.4"
+    escape-string-regexp: "npm:^4.0.0"
+    esquery: "npm:^1.5.0"
+    is-builtin-module: "npm:^3.2.1"
+    semver: "npm:^7.5.4"
+    spdx-expression-parse: "npm:^3.0.1"
+  peerDependencies:
+    eslint: ^7.0.0 || ^8.0.0
+  checksum: 4566b0f9bda54b446c813cf5ea93ae6d5866cbc4d448cb957b9ce2563f934d3ed2ed4e665e5a870750860a57137a1714c38599c35c60be16dce0f8e5a75b6ff6
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-prefer-arrow@npm:^1.2.1":
   version: 1.2.3
   resolution: "eslint-plugin-prefer-arrow@npm:1.2.3"
@@ -4571,7 +4608,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.1":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.9":
   version: 3.3.1
   resolution: "fast-glob@npm:3.3.1"
   dependencies:
@@ -4581,6 +4618,19 @@ __metadata:
     merge2: "npm:^1.3.0"
     micromatch: "npm:^4.0.4"
   checksum: b68431128fb6ce4b804c5f9622628426d990b66c75b21c0d16e3d80e2d1398bf33f7e1724e66a2e3f299285dcf5b8d745b122d0304e7dd66f5231081f33ec67c
+  languageName: node
+  linkType: hard
+
+"fast-glob@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 42baad7b9cd40b63e42039132bde27ca2cb3a4950d0a0f9abe4639ea1aa9d3e3b40f98b1fe31cbc0cc17b664c9ea7447d911a152fa34ec5b72977b125a6fc845
   languageName: node
   linkType: hard
 
@@ -8467,9 +8517,9 @@ __metadata:
     "@salesforce/sf-plugins-core": "npm:^3.1.20"
     "@salesforce/ts-sinon": "npm:^1.4.18"
     "@swc/core": "npm:^1.3.19"
-    "@types/inquirer": "npm:^9.0.3"
+    "@types/inquirer": "npm:^9.0.7"
     "@types/node": "npm:^20.10.0"
-    "@types/xml2js": "npm:^0.4.13"
+    "@types/xml2js": "npm:^0.4.14"
     "@typescript-eslint/eslint-plugin": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.62.0"
     chai: "npm:^4.3.10"
@@ -8480,9 +8530,9 @@ __metadata:
     eslint-config-salesforce-typescript: "npm:^2.0.0"
     eslint-plugin-header: "npm:^3.1.1"
     eslint-plugin-import: "npm:2.29.0"
-    eslint-plugin-jsdoc: "npm:^46.8.2"
+    eslint-plugin-jsdoc: "npm:^46.9.0"
     eslint-plugin-sf-plugin: "npm:^1.16.2"
-    fast-glob: "npm:^3.3.1"
+    fast-glob: "npm:^3.3.2"
     husky: "npm:^7.0.4"
     mocha: "npm:^9.2.2"
     nyc: "npm:^15.1.0"
