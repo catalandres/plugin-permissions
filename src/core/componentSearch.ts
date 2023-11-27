@@ -37,13 +37,21 @@ export function makeData(component: MetadataComponent): Record<string, unknown> 
 	return JSON.parse(JSON.stringify(component)) as Record<string, unknown>;
 }
 
-export function searchComponentsByType(projectPath: string, componentName: MetadataComponentType): MetadataComponent[] {
+export function searchComponentsByType(projectPath: string, componentType: MetadataComponentType): MetadataComponent[] {
+	return searchComponentsByNameAndType(projectPath, '*', componentType);
+}
+
+export function searchComponentsByNameAndType(
+	projectPath: string,
+	componentName: string,
+	componentType: MetadataComponentType
+): MetadataComponent[] {
 	const components: MetadataComponent[] = [];
 
 	SfProject.getInstance(projectPath)
 		.getUniquePackageDirectories()
 		.forEach((thisPackage: NamedPackageDir) => {
-			const searchPattern = thisPackage.fullPath + '/**/*.' + componentName + '-meta.xml';
+			const searchPattern = thisPackage.fullPath + '/**/' + componentName + '.' + componentType + '-meta.xml';
 			const files = glob.sync(searchPattern);
 			files.forEach((fullPath) => {
 				const component = new MetadataComponent();
@@ -65,7 +73,7 @@ export function searchComponentsByType(projectPath: string, componentName: Metad
 
 				const xml = fs.readFileSync(fullPath, 'utf-8');
 
-				switch (componentName) {
+				switch (componentType) {
 					case MetadataComponentType.PERMISSION_SET: {
 						xml2js.parseString(
 							xml,
@@ -118,4 +126,49 @@ export function searchComponentsByType(projectPath: string, componentName: Metad
 		});
 
 	return components;
+}
+
+export function getPermissionSet(path: string): PermissionSet | undefined {
+	let permissionSet: PermissionSet | undefined;
+	const xml = fs.readFileSync(path, 'utf-8');
+	xml2js.parseString(
+		xml,
+		{
+			explicitArray: false,
+			mergeAttrs: true,
+			valueProcessors: [xml2js.processors.parseNumbers, xml2js.processors.parseBooleans],
+		},
+		(err, result: PermissionSetParsingResult) => {
+			if (result) {
+				permissionSet = result.PermissionSet;
+			}
+		}
+	);
+	return permissionSet;
+}
+
+export function getPermissionSets(names: string[]): Map<string, PermissionSet> {
+	const permissionSets = new Map<string, PermissionSet>();
+
+	names.forEach((name) => {
+		const metadataComponents: MetadataComponent[] = searchComponentsByNameAndType(
+			SfProject.getInstance().getPath(),
+			name,
+			MetadataComponentType.PERMISSION_SET
+		);
+		if (metadataComponents.length === 0) {
+			// this.error(`Permission Set ${name} not found`);
+		}
+		if (metadataComponents.length === 1) {
+			const permissionSet = getPermissionSet(metadataComponents[0].fullPath);
+			if (permissionSet) {
+				permissionSets.set(name, permissionSet);
+			}
+		}
+		if (metadataComponents.length > 1) {
+			// this.error(`Permission Set ${name} is ambiguous`);
+		}
+	});
+
+	return permissionSets;
 }
