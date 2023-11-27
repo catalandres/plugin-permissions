@@ -3,6 +3,8 @@
 	"description": "",
 	"version": "0.1.1",
 	"dependencies": {
+		"@commitlint/cli": "^18.4.3",
+		"@commitlint/config-conventional": "^18.4.3",
 		"@oclif/core": "^2.15.0",
 		"@salesforce/core": "^5.2.10",
 		"@salesforce/kit": "^3.0.15",
