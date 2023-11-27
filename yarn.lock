@@ -2065,12 +2065,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/xml2js@npm:^0.4.13":
-  version: 0.4.13
-  resolution: "@types/xml2js@npm:0.4.13"
+"@types/xml2js@npm:^0.4.14":
+  version: 0.4.14
+  resolution: "@types/xml2js@npm:0.4.14"
   dependencies:
     "@types/node": "npm:*"
-  checksum: a31ab20996185017b1f54e6024d998caebf039c439e95cd1c24340a0b333efafa79624c45aab4d5ab59b45332c0510b0b0ca4ebaf61f633941fe783d0683b97e
+  checksum: 06776e7f7aec55a698795e60425417caa7d7db3ff680a7b4ccaae1567c5fec28ff49b9975e9a0d74ff4acb8f4a43730501bbe64f9f761d784c6476ba4db12e13
   languageName: node
   linkType: hard
 
@@ -8469,7 +8469,7 @@ __metadata:
     "@swc/core": "npm:^1.3.19"
     "@types/inquirer": "npm:^9.0.3"
     "@types/node": "npm:^20.10.0"
-    "@types/xml2js": "npm:^0.4.13"
+    "@types/xml2js": "npm:^0.4.14"
     "@typescript-eslint/eslint-plugin": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.62.0"
     chai: "npm:^4.3.10"
