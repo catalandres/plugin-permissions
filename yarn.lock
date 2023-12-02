@@ -1428,7 +1428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@salesforce/core@npm:^5.2.10, @salesforce/core@npm:^5.3.1, @salesforce/core@npm:^5.3.10, @salesforce/core@npm:^5.3.17":
+"@salesforce/core@npm:^5.3.1, @salesforce/core@npm:^5.3.10, @salesforce/core@npm:^5.3.17":
   version: 5.3.18
   resolution: "@salesforce/core@npm:5.3.18"
   dependencies:
@@ -1451,6 +1451,32 @@ __metadata:
     semver: "npm:^7.5.4"
     ts-retry-promise: "npm:^0.7.1"
   checksum: ed113ebc050a00d715079fdec90dbf7e12adf01cf439ee46c10cf962e6d26f409e63c15772ae654c087a4443014885200ad8d7eea15c3497878f0a1989584da5
+  languageName: node
+  linkType: hard
+
+"@salesforce/core@npm:^5.3.20":
+  version: 5.3.20
+  resolution: "@salesforce/core@npm:5.3.20"
+  dependencies:
+    "@salesforce/kit": "npm:^3.0.15"
+    "@salesforce/schemas": "npm:^1.6.1"
+    "@salesforce/ts-types": "npm:^2.0.9"
+    "@types/semver": "npm:^7.5.4"
+    ajv: "npm:^8.12.0"
+    change-case: "npm:^4.1.2"
+    faye: "npm:^1.4.0"
+    form-data: "npm:^4.0.0"
+    js2xmlparser: "npm:^4.0.1"
+    jsforce: "npm:^2.0.0-beta.28"
+    jsonwebtoken: "npm:9.0.2"
+    jszip: "npm:3.10.1"
+    pino: "npm:^8.16.0"
+    pino-abstract-transport: "npm:^1.0.0"
+    pino-pretty: "npm:^10.2.3"
+    proper-lockfile: "npm:^4.1.2"
+    semver: "npm:^7.5.4"
+    ts-retry-promise: "npm:^0.7.1"
+  checksum: 1c5aeadcfc150eb0d3f9d9111111ed542a3e0cade5818a38d1e7bbaa9316aa3ff1e98645d17d254490661ee0e3252a5c3e54f7c572fc51d9467fb348f2a8580f
   languageName: node
   linkType: hard
 
@@ -8649,7 +8675,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^18.4.3"
     "@oclif/core": "npm:^2.15.0"
     "@salesforce/cli-plugins-testkit": "npm:^4.4.12"
-    "@salesforce/core": "npm:^5.2.10"
+    "@salesforce/core": "npm:^5.3.20"
     "@salesforce/dev-config": "npm:^4.1.0"
     "@salesforce/dev-scripts": "npm:^5.7.0"
     "@salesforce/kit": "npm:^3.0.15"
