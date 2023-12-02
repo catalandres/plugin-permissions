@@ -1428,7 +1428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@salesforce/core@npm:^5.2.10, @salesforce/core@npm:^5.3.1, @salesforce/core@npm:^5.3.10, @salesforce/core@npm:^5.3.17":
+"@salesforce/core@npm:^5.2.10, @salesforce/core@npm:^5.3.1, @salesforce/core@npm:^5.3.10":
   version: 5.3.18
   resolution: "@salesforce/core@npm:5.3.18"
   dependencies:
@@ -1451,6 +1451,32 @@ __metadata:
     semver: "npm:^7.5.4"
     ts-retry-promise: "npm:^0.7.1"
   checksum: ed113ebc050a00d715079fdec90dbf7e12adf01cf439ee46c10cf962e6d26f409e63c15772ae654c087a4443014885200ad8d7eea15c3497878f0a1989584da5
+  languageName: node
+  linkType: hard
+
+"@salesforce/core@npm:^5.3.20":
+  version: 5.3.20
+  resolution: "@salesforce/core@npm:5.3.20"
+  dependencies:
+    "@salesforce/kit": "npm:^3.0.15"
+    "@salesforce/schemas": "npm:^1.6.1"
+    "@salesforce/ts-types": "npm:^2.0.9"
+    "@types/semver": "npm:^7.5.4"
+    ajv: "npm:^8.12.0"
+    change-case: "npm:^4.1.2"
+    faye: "npm:^1.4.0"
+    form-data: "npm:^4.0.0"
+    js2xmlparser: "npm:^4.0.1"
+    jsforce: "npm:^2.0.0-beta.28"
+    jsonwebtoken: "npm:9.0.2"
+    jszip: "npm:3.10.1"
+    pino: "npm:^8.16.0"
+    pino-abstract-transport: "npm:^1.0.0"
+    pino-pretty: "npm:^10.2.3"
+    proper-lockfile: "npm:^4.1.2"
+    semver: "npm:^7.5.4"
+    ts-retry-promise: "npm:^0.7.1"
+  checksum: 1c5aeadcfc150eb0d3f9d9111111ed542a3e0cade5818a38d1e7bbaa9316aa3ff1e98645d17d254490661ee0e3252a5c3e54f7c572fc51d9467fb348f2a8580f
   languageName: node
   linkType: hard
 
@@ -4478,13 +4504,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sf-plugin@npm:^1.16.2":
-  version: 1.16.14
-  resolution: "eslint-plugin-sf-plugin@npm:1.16.14"
+"eslint-plugin-sf-plugin@npm:^1.16.15":
+  version: 1.16.15
+  resolution: "eslint-plugin-sf-plugin@npm:1.16.15"
   dependencies:
-    "@salesforce/core": "npm:^5.3.17"
+    "@salesforce/core": "npm:^5.3.20"
     "@typescript-eslint/utils": "npm:^5.59.11"
-  checksum: abf8385501b4e57315ec7235c724ba43b3b3ad2099fd17b9a37e878c1c211a69b0968c201e37ee6aa3608f104995aa41985283502cc7c9c4c025730301833584
+  checksum: 7073ca7720fc016d5e9b4217bcd50cd3903a19b0816393a817ce292f5e0a57ef8fc21f65e71238c6a5916c61cef3eae468392c307857afa338abcd531f2ba878
   languageName: node
   linkType: hard
 
@@ -8671,7 +8697,7 @@ __metadata:
     eslint-plugin-header: "npm:^3.1.1"
     eslint-plugin-import: "npm:2.29.0"
     eslint-plugin-jsdoc: "npm:^46.9.0"
-    eslint-plugin-sf-plugin: "npm:^1.16.2"
+    eslint-plugin-sf-plugin: "npm:^1.16.15"
     fast-glob: "npm:^3.3.2"
     husky: "npm:^7.0.4"
     mocha: "npm:^9.2.2"
